@@ -127,7 +127,7 @@ const germany = [
   {
     img: "images/ger6.png",
     author: "Clara Schmidt",
-    title: "Big waters",
+    title: "Big waters  ",
     material: "Color lithograph (40x60)",
     price: "2500$",
   },
