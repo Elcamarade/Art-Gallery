@@ -441,7 +441,7 @@ p {
 }
 
 .btn:hover {
- background: rgba(250, 235, 151, 1);
+  background: rgba(250, 235, 151, 1);
 }
 
 .btn:focus {
@@ -453,4 +453,61 @@ p {
 .btn:active {
   background: rgba(217, 185, 73, 1);
   transform: scale(0.98);
+}
+
+/* About us section */
+
+#about {
+  max-width: 1110px;
+  height: 440px;
+  display: flex;
+  margin: 70px 165px;
+}
+
+#about .about-frame {
+  width: 361px;
+  height: 445px;
+}
+
+#about .about-text h3 {
+  max-width: 281px;
+  height: 44px;
+  color: rgba(44, 45, 53, 1);
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 47px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-top: 130px;
+  margin-left: 30px;
+}
+
+#about .about-text p {
+  max-width: 635px;
+  height: 108px;
+  color: rgba(44, 45, 53, 1);
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+#about .about-text-img {
+  width: 300px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+#about .about-text-img .about-photo {
+  width: 80px;
+  height: 80px;
 }
