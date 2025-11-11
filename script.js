@@ -179,3 +179,24 @@ buttons.forEach((btn) => {
 
 // 🔹 Afișează implicit Franța
 renderCountry(france);
+
+
+const lightBg = "rgba(225, 237, 230, 1)";
+
+const body = document.body;
+const themeButton = document.getElementById("theme-button");
+
+themeButton.addEventListener("click", function () {
+  const currentBodyBg = window.getComputedStyle(body).backgroundColor;
+
+  // Comparăm direct cu valoarea returnată de getComputedStyle
+  if (currentBodyBg === "rgb(225, 237, 230)") { 
+    body.style.backgroundColor = "rgb(0, 0, 0)";
+    body.style.color = "#FFF";
+    themeButton.innerText = "☀️";
+  } else {
+    body.style.backgroundColor = "rgb(225, 237, 230)";
+    body.style.color = "#000";
+    themeButton.innerText = "🌑";
+  }
+});
