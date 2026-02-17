@@ -53,3 +53,39 @@ function createHeader() {
 }
 
 document.body.prepend(createHeader());
+
+
+
+function createHero() {
+  const hero = document.createElement("section");
+  hero.id = "hero";
+
+  const bird = document.createElement("img");
+  bird.src = "images/Layer 0 1.svg";
+  bird.alt = "#";
+  bird.className = "hero-bird";
+
+  const heroBox = document.createElement("div");
+  heroBox.className = "hero-box";
+
+  const h1 = document.createElement("h1");
+  h1.innerHTML = `Replicas of paintings <br />from <span>Ink. House</span>`;
+
+  const p = document.createElement("p");
+  p.innerHTML = `High-quality renderings on thick paper or linen <br />
+canvas. Rare works, affordable prices.`;
+
+  const button = document.createElement("button");
+  button.textContent = "Products";
+
+  heroBox.appendChild(h1);
+  heroBox.appendChild(p);
+  heroBox.appendChild(button);
+
+  hero.appendChild(bird);
+  hero.appendChild(heroBox);
+
+  return hero;
+}
+
+document.body.insertBefore(createHero(), document.getElementById("catalog"));
