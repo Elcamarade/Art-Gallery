@@ -1,0 +1,20 @@
+{
+  "headerLinks": [
+    { "text": "Replicas", "href": "#catalog" },
+    { "text": "New", "href": "#banner" },
+    { "text": "About us", "href": "#about" }
+  ],
+  "title": "Replicas of Paintings from Ink. House",
+  "hero": {
+    "subtitle": "High-quality renderings on thick paper or linen canvas. Rare works, affordable prices.",
+    "buttonText": "Products",
+    "birdImage": "images/Layer 0 1.svg"
+  },
+  "images": [
+    "https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_2114.jpg",
+    "https://images.dog.ceo/breeds/segugio-italian/n02090722_001.jpg",
+    "https://images.dog.ceo/breeds/shihtzu/n02086240_1170.jpg",
+    "https://images.dog.ceo/breeds/affenpinscher/n02110627_8621.jpg",
+    "https://images.dog.ceo/breeds/terrier-scottish/n02097298_6383.jpg"
+  ]
+}
