@@ -83,3 +83,77 @@ fetch("data.json")
 
     addImages(data);
   });
+
+function creeazaSearchLiveGlobal() {
+  const toatePozele = [...france, ...england, ...germany];
+
+  const input = document.createElement("input");
+  input.type = "search";
+  input.placeholder = "Caută o poză după titlu...";
+  input.className = "search-input";
+
+  const rezultatDiv = document.createElement("div");
+  rezultatDiv.className = "search-results";
+
+  document.body.appendChild(input);
+  document.body.appendChild(rezultatDiv);
+
+  const istoricInitial = JSON.parse(localStorage.getItem("istoricCautari")) || [];
+
+  if (istoricInitial.length > 0) {
+    input.value = istoricInitial[istoricInitial.length - 1];
+  }
+
+  function salveazaCautare(termen) {
+    let istoric = JSON.parse(localStorage.getItem("istoricCautari")) || [];
+
+    if (termen.trim() !== "" && !istoric.includes(termen)) {
+      istoric.push(termen);
+      localStorage.setItem("istoricCautari", JSON.stringify(istoric));
+    }
+  }
+
+  function cautaLive() {
+    const termen = input.value.toLowerCase();
+    rezultatDiv.innerHTML = "";
+
+    const gasite = toatePozele.filter((poze) =>
+      poze.title.toLowerCase().includes(termen)
+    );
+
+    if (gasite.length > 0) {
+      gasite.forEach((poze) => {
+        const container = document.createElement("div");
+        container.className = "result-card";
+
+        const img = document.createElement("img");
+        img.src = poze.img;
+        img.alt = poze.title;
+        img.className = "result-img";
+
+        const info = document.createElement("p");
+        info.textContent = `${poze.title} - ${poze.price}`;
+
+        container.appendChild(img);
+        container.appendChild(info);
+        rezultatDiv.appendChild(container);
+      });
+    } else {
+      rezultatDiv.textContent = "Nu am găsit nicio poză.";
+    }
+  }
+
+  input.addEventListener("input", cautaLive);
+
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      salveazaCautare(input.value.toLowerCase());
+    }
+  });
+
+  if (istoricInitial.length > 0) {
+    cautaLive();
+  }
+}
+
+creeazaSearchLiveGlobal();
